@@ -1,0 +1,102 @@
+﻿<Window x:Class="NightTextEditor.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NightTextEditor"
+        mc:Ignorable="d"
+        Title="NightTextEditor" Height="900" Width="900" Background="#2e2e2e" WindowStartupLocation="CenterOwner" Icon="/Иконка.png" MinWidth="450" MinHeight="250">
+
+    <Grid x:Name="Elements">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="130"/>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.ColumnSpan="8" Grid.RowSpan="2" 
+                Background="#FF212121"/>
+
+        <Button x:Name="Open_Button" 
+                Grid.Row="1" Grid.Column="1" 
+                Foreground="Gray" FontSize="14" FontFamily="Arial" 
+                Background="#FF212121" BorderBrush="Gray" 
+                Margin="5,10,5,10" 
+                Click="Button_Open">Открыть</Button>
+
+        <TextBlock x:Name="Way" 
+                   Grid.Column="3" Grid.Row="1" 
+                   Background="#FF212121" 
+                   Foreground="Gray"  
+                   VerticalAlignment="Center" 
+                   Text="Текущий путь пуст..." FontSize="14" FontFamily="Arial"  FontWeight="Thin" 
+                   Margin="5,0,5,0"/>
+
+        <Button x:Name="Safe_Button" 
+                Grid.Column="2" Grid.Row="1" 
+                Foreground="Gray" FontSize="14" FontFamily="Arial" 
+                Background="#FF212121" BorderBrush="Gray" 
+                Margin="5,10,5,10" 
+                Click="Button_Safe" 
+                Content="Сохранить" />
+
+        <TextBox x:Name="Input" 
+                 Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="6" 
+                 SelectionBrush="White" Foreground="Gray" BorderBrush="{x:Null}" Background="#FF2E2E2E" 
+                 Margin="0,5,0,5" 
+                 AcceptsReturn="True" TextWrapping="NoWrap"
+                 VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto"/>
+
+        <GridSplitter Grid.Row="1" Grid.Column="3" ShowsPreview="False" Width="2" Height="15" Background="Gray" />
+
+        <TextBlock x:Name="QuantitySymbol" 
+                   Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2" 
+                   Text="Cимволов: 0" FontSize="10" Foreground="Gray" FontFamily="Arial" FontWeight="Thin"/>
+
+        <TextBlock x:Name="Words" 
+                   Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"  
+                   Text="Cлов: 0" FontSize="10" Foreground="Gray" FontFamily="Arial" FontWeight="Thin" 
+                   VerticalAlignment="Center"/>
+
+        <TextBlock x:Name="Paragraph" 
+                   Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="2"  
+                   Text="Aбзацев: 0" FontSize="10" Foreground="Gray" FontFamily="Arial" FontWeight="Thin" 
+                   VerticalAlignment="Bottom"/>
+
+        <ComboBox x:Name="FontFamilyComboBox" Grid.Column="4" Grid.Row="1" SelectedIndex="0"  Margin="10,10,10,10"  SelectionChanged="FontFamilyComboBox_">
+            <ComboBoxItem Content="Arial"/>
+            <ComboBoxItem Content="Times New Roman"/>
+            <ComboBoxItem Content="Verdana"/>
+        </ComboBox>
+        <ComboBox x:Name="FontSizeComboBox" Grid.Column="5" Grid.Row="1" SelectedIndex="1"  Margin="0,10,0,10" SelectionChanged="FontSizeComboBox_">>
+            <ComboBoxItem Content="8"/>
+            <ComboBoxItem Content="9"/>
+            <ComboBoxItem Content="10"/>
+            <ComboBoxItem Content="12"/>
+            <ComboBoxItem Content="14"/>
+            <ComboBoxItem Content="16"/>
+            <ComboBoxItem Content="18"/>
+            <ComboBoxItem Content="20"/>
+            <ComboBoxItem Content="22"/>
+            <ComboBoxItem Content="24"/>
+            <ComboBoxItem Content="26"/>
+            <ComboBoxItem Content="28"/>
+            <ComboBoxItem Content="30"/>
+            <ComboBoxItem Content="40"/>
+            <ComboBoxItem Content="50"/>
+            <ComboBoxItem Content="60"/>
+            <ComboBoxItem Content="70"/>
+        </ComboBox>
+    </Grid>
+</Window>
